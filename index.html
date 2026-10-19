@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#245a46">
+  <meta name="description" content="Organiza tus tareas con calma. Añade, completa y elimina tus pendientes.">
+  <title>A tu ritmo · Mis tareas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="brand"><span class="brand-icon" aria-hidden="true">✓</span> a tu ritmo <span class="brand-note">UN PASO CADA VEZ</span></header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">TU ESPACIO PARA ORGANIZARTE</p>
+      <h1 id="title">Menos ruido.<br>Más cosas hechas<span>.</span></h1>
+      <p class="subtitle">Saca tus pendientes de la cabeza.<br>Aquí, cada pequeño paso cuenta.</p>
+    </section>
+    <section class="task-panel" aria-label="Gestor de tareas">
+      <div class="panel-heading"><h2>Mis tareas</h2><span id="count" class="count">0 pendientes</span></div>
+      <form id="task-form">
+        <label for="task-input">¿Qué quieres hacer?</label>
+        <div class="input-row"><input id="task-input" name="task" placeholder="Escribe una nueva tarea…" maxlength="240" required autocomplete="off" enterkeyhint="done"><button class="add" type="submit"><span aria-hidden="true">＋</span> Añadir</button></div>
+      </form>
+      <div class="filters" role="group" aria-label="Filtrar tareas">
+        <button type="button" data-filter="all" aria-pressed="true">Todas</button>
+        <button type="button" data-filter="pending" aria-pressed="false">Pendientes</button>
+        <button type="button" data-filter="completed" aria-pressed="false">Completadas</button>
+      </div>
+      <ul id="task-list" aria-label="Lista de tareas"></ul>
+      <div id="empty" class="empty"><span class="empty-icon" aria-hidden="true">✓</span><h3>Todo empieza con un pequeño paso</h3><p>Añade tu primera tarea y hazle sitio a lo importante.</p></div>
+      <div class="panel-footer"><span id="progress-text">Tu próximo paso empieza aquí.</span><span aria-hidden="true">↗</span></div>
+      <div class="progress-track"><div id="progress"></div></div>
+    </section>
+    <p class="local-note"><span aria-hidden="true">◈</span> Tus tareas se guardan solo en este navegador.</p>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+  <footer>Un poco de orden. Un poco más de calma.</footer>
+</body>
+</html>
